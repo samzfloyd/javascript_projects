@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature Calculator</title>
+    <script type="text/javascript">
+        
+        function convert(){
+            value1=document.getElementById("input1").value;
+            value2=document.getElementById("input2").value;
+            temp = document.getElementById("select1").value;
+
+            console.log(value1,value2,temp)
+            
+            if(temp=="Celsius"){
+
+                set=(value1*9/5)+32;
+                document.getElementById("result").innerText="("+value1+"°C × 9/5) + 32 = "+set+"°F";
+                document.getElementById("input2").value=set+"°F";
+
+            }
+            else if(temp=="Farenhit"){
+                set=(value1-32)*5/9;
+                document.getElementById("input2").value=set+"°F";
+                
+                document.getElementById("result").innerText="("+value1+"°F − 32) × 5/9 = "+set+"°C"; 
+
+            }
+        }
+
+        
+
+        function myFunction(){
+            if(document.getElementById("select1").value==="Celsius"){
+            document.getElementById("select2").value="Farenhit"
+            }else if(document.getElementById("select1").value==="Farenhit"){
+                document.getElementById("select2").value="Celsius"}
+        }
+
+        
+    </script>
+    <style>
+      .mainDiv {
+        width: 85vw;
+        display: grid;
+        margin: auto;
+        padding-top: 80px;
+      }
+
+      .inputDiv {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 10px;
+        grid-column-gap: 10px;
+        width: 100%;
+        height: 39px;
+      }
+
+      .selectTemp{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        grid-column-gap: 9px;
+        margin: 10px;
+        height: 34px;
+      }
+      #span1{
+        display: inline-block;
+        background-color: #f9ab00;
+        color: white;
+        position: absolute;
+        top: 263px;
+        left: 105px;
+      }
+
+      #result{
+        position: relative;
+        left: 75px;
+      }
+
+      .resultDiv button{
+        width: 100%;
+        margin-top: 20px;
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mainDiv">
+
+      <div class="inputDiv">
+        <input id="input1" type="text" />
+        <input id="input2" type="text" disabled/>
+      </div>
+
+      <div class="selectTemp">
+        <select id="select1" onclick="myFunction()">
+          <option class="temp1" value="Celsius">Celsius</option>
+          <option class="temp1" value="Farenhit">Farenhit</option>
+        </select>
+        <select id="select2" onclick="myFunction()">
+          <option class="temp2" disabled>Farenhit</option>
+          <option class="temp2" disabled>Celsius</option>
+        </select>
+      </div>
+
+      <div class="resultDiv">
+        <button type="button" onclick="convert()">CONVERT</button>
+        <span id="span1">Formula</span> </h5>
+        <h5 id="result"> </h5>    
+      </div>
+    </div>
+  </body>
+</html>
