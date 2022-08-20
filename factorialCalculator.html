@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Factorial Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .main-div {
+        background: rgb(161, 161, 161);
+        font-family: "Tajawal", sans-serif;
+      }
+      .heading {
+        background-color: RGB(168, 113, 50);
+        color: white;
+        font-family: "Tajawal", sans-serif;
+        text-align: center;
+        width: 100vw;
+        font-size: 28px;
+      }
+      .formula {
+        text-align: center;
+        font-size: 26px;
+        font-family: inherit;
+      }
+
+      .take-input {
+        display: grid;
+        grid-template-columns: 42px 98px;
+        justify-content: center;
+        grid-template-rows: 64px 69px;
+        font-size: 21px;
+        align-content: center;
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      .two-buttons {
+        
+        display: grid;
+        grid-template-columns: 100px 100px;
+        justify-content: space-evenly;
+      }
+
+      .two-buttons button{
+        cursor: pointer;
+        border: 2px solid white;
+        border-radius:5px ;
+        background-color: white;
+        font-family: inherit;
+        font-weight:bold ;
+      }
+
+      .answer{
+        display: grid;
+    justify-items: center;
+      }
+    </style>
+    <script>
+        function calculate(){
+            let inp = document.getElementById("getInput").value;
+            let res = 1;
+            for(i=1; i<inp; i++){
+                res = res + i*res;
+
+            }
+            document.getElementById("answer1").innerText=res;
+            console.log(res)
+        }
+
+        function clear1(){
+            document.getElementById("answer1").innerText="";
+            document.getElementById("getInput").value="";
+            
+        }
+        
+    </script>
+  </head>
+  <body>
+    <div class="main-div">
+      <div class="heading">
+        <h2>Factorials Calculator</h2>
+      </div>
+      <div class="formula">
+        <h5>n! = ?</h5>
+      </div>
+      <div class="take-input">
+        <p>n =</p>
+        <input type="number" id="getInput"/>
+      </div>
+      <div class="two-buttons">
+        <button onclick="clear1()">Clear</button>
+        <button onclick="calculate()">Calculate</button>
+      </div>
+      <div class="answer">
+        <p>Answer:</p>
+        <p id="answer1"></p>
+      </div>
+    </div>
+  </body>
+</html>
