@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leap Year Finder</title>
+    <script type="text/javascript">
+
+            function getLeapYear(){
+                let year = document.getElementById("getYear").value;
+
+                if(year%400===0 & year%100===0){
+                    alert(year+" is a Leap year")
+                }
+                
+                else if(year%4===0 & year%100 !=0){
+                    alert(year+" is a Leap year")
+
+                }
+                
+                else{
+                    alert(year+" is  not a Leap year")
+                }
+
+            }
+
+    </script>
+    <style>
+        .page{
+            margin: auto;
+            justify-items: center;
+            display: grid;
+            line-height: 5;
+
+        }
+        #getYear{
+            height: 10vh;
+            width:30vw;
+            text-align : center;
+            font-size: 15px;
+
+        }
+
+        button{
+            height:11vh;
+            width:11vw
+        }
+    </style>
+</head>
+<body>
+    <h1 class="page">LEAP YEAR FINDER</h1>
+    <input id="getYear" class="page" type="text" placeholder="Enter A Year"></body></html><br>
+    <button class="page" onclick="getLeapYear()">Submit</button>
+</body>
+</html>
